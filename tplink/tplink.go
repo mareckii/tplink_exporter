@@ -151,7 +151,7 @@ func (r *Router) GetWANTraffic() (float64, float64, error) {
 	if err != nil {
 		return 0, 0, err
 	}
-	expr, err := regexp.Compile(`(?m)var statistList = new Array\(\n\"([^\"]*)\", \"([^\"]*)`)
+	expr, err := regexp.Compile(`(?m)var statistList = new Array\(\n(\d+),\s?(\d+).*`)
 	if err != nil {
 		return 0, 0, err
 	}
@@ -163,7 +163,7 @@ func (r *Router) GetWANTraffic() (float64, float64, error) {
 	rx, _ := strconv.ParseFloat(strings.Replace(stats[1], ",", "", -1), 64)
 	tx, _ := strconv.ParseFloat(strings.Replace(stats[2], ",", "", -1), 64)
 
-	return tx / 1024, rx / 1024, nil
+	return rx / 1024, tx / 1024, nil
 }
 
 func contains(clients []Client, client Client) bool {

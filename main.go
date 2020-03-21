@@ -9,8 +9,8 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
-	"github.com/maesoser/tplink_exporter/macdb"
-	"github.com/maesoser/tplink_exporter/tplink"
+	"tplink_exporter/macdb"
+	"tplink_exporter/tplink"
 )
 
 func main() {

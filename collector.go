@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/maesoser/tplink_exporter/macdb"
-	"github.com/maesoser/tplink_exporter/tplink"
 	"github.com/prometheus/client_golang/prometheus"
 	"log"
 	"sync"
+	"tplink_exporter/macdb"
+	"tplink_exporter/tplink"
 )
 
 //Define a struct for you collector that contains pointers
