@@ -117,7 +117,7 @@ func (collector *routerCollector) scrape(ch chan<- prometheus.Metric) error {
 
 	}
 	return nil
-	//router.Logout()
+	router.Logout()
 }
 
 //Collect implements required collect function for all promehteus collectors
